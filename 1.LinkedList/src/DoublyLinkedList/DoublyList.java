@@ -9,25 +9,32 @@ public class DoublyList {
 
 	public void insertMethod(int data, int location) {
 		DoublyNode newNode = new DoublyNode();
+		//if list is Empty then newnode is first node set head and tail to that newnode
 		if (head == null) {
 			newNode.value = data;
 			newNode.prev = null;
 			newNode.next = null;
 			head = newNode;
 			tail = newNode;
-		} else if (location == 0) {
+		}
+		//if location is 0 then node added from front
+		else if (location == 0) {
 			newNode.value = data;
 			newNode.next = head;
 			head.prev = newNode;
 			newNode.prev = null;
 			head = newNode;
-		} else if (location >= size) {
+		} 
+		//if location is greater than size then node added from rear
+		else if (location >= size) {
 			newNode.value = data;
 			tail.next = newNode;
 			newNode.prev = tail;
 			tail = newNode;
 
-		} else {
+		}
+		//if location is between 0 to size then insert at that position
+		else {
 			int i = 0;
 			DoublyNode current = head;
 			while (i < location - 1) {
@@ -92,12 +99,14 @@ public class DoublyList {
 		System.out.print("Node not found!");
 		return false;
 	}
-
+//delete is same as that insert 
 	public void deleteMethod(int location) {
 		if (head == null) {
 			System.out.println("The DLL does not exist!");
 			return;
-		} else if (location == 0) {
+		} 
+		//delete from front
+		else if (location == 0) {
 			if (size == 1) {
 				head = null;
 				tail = null;
@@ -109,6 +118,7 @@ public class DoublyList {
 				size--;
 			}
 		}
+		//delete from end
 		else if(location>=size) {
 			if (size == 1) {
 				head = null;
@@ -121,7 +131,7 @@ public class DoublyList {
 				size--;
 			}
 		}
-		else {
+		else {//delete at random position
 			DoublyNode current=head;
 			for(int i=0;i<location-1;i++) {
 				current=current.next;

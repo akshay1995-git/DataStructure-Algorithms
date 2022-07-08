@@ -46,7 +46,7 @@ public class CircularList implements ICirSinglyList {
 				current = current.next;
 			}
 			current.next = newNode;
-			newNode.next = head;
+			newNode.next = head;//connect last node to first node
 			newNode.data = data;
 
 		}
@@ -90,7 +90,7 @@ public class CircularList implements ICirSinglyList {
 				previous = current;
 				current = current.next;
 			}
-			previous.next = current.next;
+			previous.next = current.next;//connect head to previous of current
 			current.next = head;
 		} else {
 			System.out.println("List is Empty !!!");

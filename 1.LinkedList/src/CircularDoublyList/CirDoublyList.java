@@ -21,22 +21,29 @@ public class CirDoublyList {
 	void insertNode(int nodeValue, int location) {
 		DoublyNode newNode = new DoublyNode();
 		newNode.value = nodeValue;
+		//list is empty then create first node
 		if (head == null) {
 			createCDLL(nodeValue);
 			return;
-		} else if (location == 0) {
+		}
+		//location=0 then node added from front
+		else if (location == 0) {
 			newNode.next = head;
 			newNode.prev = tail;
 			head.prev = newNode;
 			tail.next = newNode;
 			head = newNode;
-		} else if (location >= size) {
+		}
+		//location >siznode added from end
+		else if (location >= size) {
 			newNode.next = head;
 			newNode.prev = tail;
 			head.prev = newNode;
 			tail.next = newNode;
 			tail = newNode;
-		} else {
+		} 
+		//random insert 
+		else {
 			DoublyNode tempNode = head;
 			int index = 0;
 			while (index < location - 1) {

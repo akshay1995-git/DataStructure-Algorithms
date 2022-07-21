@@ -1,5 +1,5 @@
 package Sort_Algorithms;
-
+//Insertion Sort
 public class Insertion_Sort {
 	public void insertion_sort(int[] array) {
 		for (int i = 1; i < array.length; i++) {

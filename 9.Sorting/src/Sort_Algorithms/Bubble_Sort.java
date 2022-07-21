@@ -1,5 +1,5 @@
 package Sort_Algorithms;
-
+//Bubble Sort
 public class Bubble_Sort {
 
 	public void bubble_sort(int []array) {

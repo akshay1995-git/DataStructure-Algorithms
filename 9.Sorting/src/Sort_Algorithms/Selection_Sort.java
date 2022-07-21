@@ -1,5 +1,5 @@
 package Sort_Algorithms;
-
+//Selection Sort
 public class Selection_Sort {
 	public void selection_sort(int []array) {//5 9 3 1 8 4 7 6
 		

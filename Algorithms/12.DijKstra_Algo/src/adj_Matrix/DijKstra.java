@@ -1,5 +1,5 @@
 package adj_Matrix;
-/*DijKstra Algorithms :
+/*DijKstra Algorithms : 
  Dijkstra’s algorithm is used to find the shortest distance from the source node to all the other nodes in the graph.
  As a result of the running Dijkstra’s algorithm on a graph, we obtain the shortest path tree (SPT) with the source vertex as root.
  In Dijkstra’s algorithm, we maintain two sets or lists. One contains the vertices that are a part of the shortest-path tree (SPT) 

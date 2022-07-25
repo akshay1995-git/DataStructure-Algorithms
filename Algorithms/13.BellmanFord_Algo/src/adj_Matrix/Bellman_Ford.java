@@ -5,7 +5,7 @@ package adj_Matrix;
  weighted graph but bellman support that
  
  */
-public class Bellman_Ford {
+public class Bellman_Ford { 
 	
 	int minDistance(int path_array[], Boolean sptSet[]) {// 0,i,i,i,i // t,f,f,f,f
 		// Initialize min value

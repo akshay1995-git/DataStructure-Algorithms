@@ -1,5 +1,11 @@
 package Sort_Algorithms;
 //Bubble Sort
+/*
+This Algorithm work repeatedly by comaparing each element with its adjacent element
+until getting intended order
+Time Complexity :O(n^2)
+Space Complexity: O(n)
+*/
 public class Bubble_Sort {
 
 	public void bubble_sort(int []array) {

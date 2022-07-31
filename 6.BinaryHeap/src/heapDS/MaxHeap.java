@@ -42,6 +42,8 @@ public class MaxHeap {
 
 	// Heapify method(from bottom to top) in binary heap for swapping in mininum
 	// Heap
+          //Every recursive call we check parent of current element is less or not
+          //if yes then perform swapping
 	public void heapifyB_T(int index) {
 		int parent = index / 2;
 		if (index <= 1) {
@@ -52,14 +54,14 @@ public class MaxHeap {
 			array[index] = array[parent];
 			array[parent] = temp;
 		}
-		heapifyB_T(parent);
+		heapifyB_T(parent);//recursive call
 	}
 
 	// insert node in binary heap
 	public void insert(int value) {
-		array[size + 1] = value;
-		size++;
-		heapifyB_T(size);
+		array[size + 1] = value;//array[0+1,2+1=3]=val
+		size++;//2,,3
+		heapifyB_T(size);//2,3
 		System.out.println(size + " Node inserted ");
 	}
 

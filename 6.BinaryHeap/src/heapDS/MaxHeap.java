@@ -67,8 +67,8 @@ public class MaxHeap {
 
 	// Heapify method(from Top to Bottom) in binary heap
 	public void heapifyT_B(int index) {
-		int left = 2 * index;
-		int right = 2 * index + 1;
+		int left = 2 * index;//find left child
+		int right = 2 * index + 1;//find right child
 		int swap_index;
 		if (size < left) { // Tree having no child
 			return;
@@ -81,11 +81,13 @@ public class MaxHeap {
 			}
 			return;
 		} else { // Tree having two child
+			//always swap child having greater value  with root 
 			if (array[left] > array[right]) { // case1-left >right element then assign swap to left
-				swap_index = left;
+				swap_index = left;//left child is greater than right
 			} else {// otherwise assign swap to right
-				swap_index = right;
+				swap_index = right;//right child is greater than left
 			}
+//swapping performed only when swapindex value is grater than root
 			if (array[index] < array[swap_index]) {
 				int temp = array[index];
 				array[index] = array[swap_index];
@@ -97,10 +99,10 @@ public class MaxHeap {
 
 	// Extract root
 	public void extractRoot() {
-		int extracted_value = array[1];
-		array[1] = array[size - 1];
-		size--;
-		heapifyT_B(1);
+		int extracted_value = array[1];//extract top value from heap
+		array[1] = array[size - 1];//assign last value to top of heap
+		size--;//decrease size by one
+		heapifyT_B(1);//call heapify method from top to bottom 
 		System.out.println(extracted_value + " value extracted ");
 	}
 

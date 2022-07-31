@@ -42,16 +42,18 @@ public class MinHeap {
 	// Heapify method(from bottom to top) in binary heap for swapping in mininum
 	// Heap
 	public void heapifyB_T(int index) {
-		int parent = index / 2;
-		if (index <= 1) {
+		int parent = index / 2;//find parent of current element
+		if (index <= 1) {//if all parent check is over 
 			return;
 		}
+        //Every recursive call we check parent of current element is greater or not
+          //if yes then perform swapping
 		if (array[index] < array[parent]) {
 			int temp = array[index];
 			array[index] = array[parent];
 			array[parent] = temp;
 		}
-		heapifyB_T(parent);
+		heapifyB_T(parent);//call recursively heapify method 
 	}
 
 	// insert node in binary heap
@@ -89,11 +91,12 @@ public class MinHeap {
 		// index element having Two child
 		else {
 			// compare two child take swapping with index whose value is less
-			if (array[left] < array[right]) {
+			if (array[left] < array[right]) {//assign min value from child to swap element
 				swap = left;// left value<right value
 			} else {
 				swap = right;// right value<left value
 			}
+//perform swaping only when root element is greater than swap element
 			if (array[index] > array[swap]) {// perform swapping
 				int temp = array[index];
 				array[index] = array[swap];
@@ -105,10 +108,10 @@ public class MinHeap {
 
 	// Extract method
 	public void extractRoot() {
-		int extract_value = array[1];
-		array[1] = array[size];// assign last value to first index
+		int extract_value = array[1];//extract root value
+		array[1] = array[size];// assign last value to first index now root element violates minheap property
 		size--;// decrease size by 1
-		heapifyT_B(1);// call heapify method to perform swapping from index=1
+		heapifyT_B(1);// call heapify method to perform swapping from index=1 beacuse of violation
 		System.out.println(extract_value + " Node Extracted ");
 
 	}
